@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style> 
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .menu {
+            width: 200px;
+            background-color: rgb(28, 24, 24);
+            padding-top: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;               
+        } 
+        .menu a {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            border-bottom: 1px solid #444;
+        }
+        .menu a:hover {
+            background-color: grey;
+        }
+        main {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Serviços</a>
+        <a href="#">Contato</a>
+    </nav>
+    <main>
+        <h1>Conteúdo Principal</h1>
+        <p>Este menu é vertical e fixo na lateral</p>
+    </main>
+    
+</body>
+</html>

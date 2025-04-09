@@ -1,0 +1,17 @@
+
+.corpo {margin:0;
+       font-family:Arial, Helvetica, sans-serif
+}
+.topo {background-color: black;
+    padding: 14px}
+.menu {display: flex;
+    justify-content: center;}
+
+ .menu a {color: bisque;
+    padding: 14px 20px;
+    transition: background 0,3s;
+}
+.menu a:hover {background-color: brown;
+    
+ }
+
