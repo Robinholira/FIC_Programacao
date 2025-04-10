@@ -1,80 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt br">
 <head>
+    <link rel="stylesheet" href="Card.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: beige;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
         
-        .Container {
-            display: flex;
-            gap: 20px;
-        }
-
-        .card {
-            background-color: aqua;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px black;
-            overflow: hidden;
-            width: 250px;
-            transition: transform 0.5s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px) ;
-        }
-
-        .card-content {
-            padding: 15px;
-            text-align: center;
-        }
-
-        .card-content h3 {
-            margin: 10px;
-            color: rgb (28, 24, 18);
-        }
-
-        .card-content p {
-            color: rgb(28, 41, 41);
-            font-size: 14px;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: rgb(67, 209, 91);
-            color: black;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s       
-        }
-
-        .btn:hover { 
-            background-color: brown;
-        }
     </style>
 </head>
 <body>
     <div class="Container">
         <div class="card">
+             <img src="Img_Basico.jpg" alt="Plano">
             <div class="card-content">
+               
                 <h3>Plano Básico</h3>
                 <p>ideal para lisos</p>
                 <a href="####" class="btn">Assinar</a>
             </div>
 
         </div>
+    
+    
+    
+        <div class="card">
+            <img src="Img_medio.jpg" alt="">
+            
+            <div class="card-content">
+                <h3>Plano Medio</h3>
+                <p>ideal para Mais ou Menos</p>
+                <a href="####" class="btn">Assinar</a>
+            </div>
+
+        </div>
+    
+    
+        <div class="card">
+            <img src="Img_Plus.jpg" alt="">
+            <div class="card-content">
+                <h3>Plano Plus</h3>
+                <p>ideal para os véio da lancha</p>
+                <a href="####" class="btn">Assinar</a>
+            </div>
+
+        </div>
     </div>
+
     
 </body>
 </html>
