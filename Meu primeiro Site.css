@@ -1,0 +1,97 @@
+* { 
+    
+/* Muda tudo*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Estilo do Corpo*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+/*Cabeçalho e Navegação*/
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+header nav ul{
+    list-style: none;
+    text-align: center;
+}
+
+header nav ul li{
+    display: inline-block;
+    margin:  0 20px;
+}
+
+header nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header nav ul li a:hover{
+    color: #f4a261;
+}
+
+/* Estilização de Início*/
+.ini-section{
+    text-align: center;
+    color: #292121;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.ini-section h1{
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.ini-section p{
+    font-size: 20px;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+.cta-button{
+    background-color: #f4a261;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+.cta-button:hover{
+    background-color: #e68a3f;
+}
+
+/* Aqui começa a nossa sessão de Sobre nós! */
+
+.sobre-section {
+    background-color: #e2d0b8;
+    padding: 50px 20px;
+}
+
+.sobre-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.sobre-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.5;
+}
