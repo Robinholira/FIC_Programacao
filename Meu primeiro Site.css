@@ -145,4 +145,46 @@ header nav ul li a:hover{
 
 #Serviços h2{
     font-size: 30px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+#Contato {
+    background-color: #333;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+   
+}
+
+#Contato h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+
+}
+.contato-form{
+    max-width: 500px;
+    margin: 10px auto;
+    text-align: left;
+
+}
+.contato-form label{
+    display: block;
+    margin-bottom: 5px;
+}
+.contato-form input,.contato-form textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+}
+.contato-form button{
+    background-color: #f4a261;
+    color: aquamarine;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }

@@ -1,0 +1,18 @@
+.vermelho {
+    color: red;
+    text-align: center;
+}
+.Bradesco {
+    background-color: red;
+    padding: 50px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.Bradesco h2, p {
+    color: white;
+}
+
+.img {
+    text-align: center;
+}
