@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vectorizer Avançado</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-potrace@2.0.0/dist/potrace.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quantize@1.0.5/dist/quantize.min.js"></script>
+</head>
+<body>
+    <h1>Vectorizer com Cores</h1>
+    
+    <input type="file" id="imageInput" accept="image/*">
+    <div style="margin: 10px 0;">
+        Threshold: <input type="range" id="threshold" min="0" max="255" value="128">
+        Cores: <input type="number" id="numColors" value="4" min="1" max="8">
+        <button onclick="processImage()">Vectorizar</button>
+        <button onclick="saveSVG()">Salvar SVG</button>
+        <input type="text" id="fileName" placeholder="Nome do arquivo" value="desenho">
+    </div>
+    
+    <div style="margin: 10px 0;">
+        <label>Suavização: 
+            <input type="range" id="smoothness" min="0" max="2" step="0.1" value="1">
+        </label>
+        <label>Tamanho Mínimo: 
+            <input type="range" id="minSize" min="0" max="50" value="10">
+        </label>
+    </div>
+
+    <!-- Preview containers mantidos -->
+
+    <script>
+        // ... (código original de carregamento de imagem)
+
+        function processImage() {
+            if (!imageData) return;
+
+            const colorCount = parseInt(document.getElementById('numColors').value);
+            const pixels = [];
+            
+            for(let i = 0; i < imageData.data.length; i += 4) {
+                pixels.push([imageData.data[i], imageData.data[i+1], imageData.data[i+2]]);
+            }
+            
+            const colorMap = quantize(pixels, colorCount);
+            const palette = colorMap.palette();
+            let finalSVG = `<svg width="${imageData.width}" height="${imageData.height}">`;
+            
+            palette.forEach((color, index) => {
+                const maskCanvas = document.createElement('canvas');
+                maskCanvas.width = imageData.width;
+                maskCanvas.height = imageData.height;
+                const ctx = maskCanvas.getContext('2d');
+                
+                // Criar máscara de cor
+                const image = new Image();
+                image.src = document.getElementById('previewCanvas').toDataURL();
+                image.onload = () => {
+                    ctx.drawImage(image, 0, 0);
+                    const maskData = ctx.getImageData(0, 0, maskCanvas.width, maskCanvas.height);
+                    
+                    // Aplicar filtro de cor
+                    for(let i = 0; i < maskData.data.length; i += 4) {
+                        const r = maskData.data[i];
+                        const g = maskData.data[i+1];
+                        const b = maskData.data[i+2];
+                        
+                        if(!colorMap.map([r, g, b])) {
+                            maskData.data[i+3] = 0; // Transparente
+                        }
+                    }
+                    
+                    ctx.putImageData(maskData, 0, 0);
+                    
+                    // Processar com Potrace
+                    const potrace = new Potrace();
+                    potrace.setThreshold(document.getElementById('threshold').value);
+                    potrace.setParameters({
+                        turdSize: document.getElementById('minSize').value,
+                        alphaMax: document.getElementById('smoothness').value,
+                        optCurve: true
+                    });
+                    
+                    potrace.loadImageFromUrl(maskCanvas.toDataURL());
+                    potrace.process(() => {
+                        const svgPath = potrace.getSVG()
+                            .replace('<svg', `<g fill="rgb(${color.join(',')})"`)
+                            .replace('</svg>', '</g>');
+                        finalSVG += svgPath;
+                        
+                        if(index === palette.length - 1) {
+                            finalSVG += '</svg>';
+                            document.getElementById('svgOutput').innerHTML = finalSVG;
+                        }
+                    });
+                };
+            });
+        }
+
+        function saveSVG() {
+            // ... (função anterior)
+        }
+    </script>
+</body>
+</html>

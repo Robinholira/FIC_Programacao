@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vectorizer HTML</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-potrace@2.0.0/dist/potrace.min.js"></script>
+    <head>
+        <!-- Adicione isto abaixo do potrace -->
+        <script src="https://cdn.jsdelivr.net/npm/quantize@1.0.5/dist/quantize.min.js"></script>
+    </head>
+</head>
+<body>
+    <h1>Image Vectorizer</h1>
+    
+    <input type="file" id="imageInput" accept="image/*">
+    <br><br>
+    
+    <!-- Controles -->
+    Threshold: <input type="range" id="threshold" min="0" max="255" value="128">
+    <button onclick="processImage()">Vectorizar</button>
+    <!-- Adicione isto abaixo do controle de threshold -->
+<div style="margin: 10px 0;">
+    
+    Cores: <input type="number" id="numColors" value="4" min="1" max="8">
+    <button onclick="processImage()">Atualizar Cores</button>
+</div>
+
+<!-- Adicione isto abaixo do controle de cores -->
+<div style="margin: 10px 0;">
+    <label>Suavização: 
+        <input type="range" id="smoothness" min="0" max="2" step="0.1" value="1">
+    </label>
+    <label>Tamanho Mínimo: 
+        <input type="range" id="minSize" min="0" max="50" value="10">
+    </label>
+</div>
+    
+    <!-- Resultados -->
+    <div style="display: flex; gap: 20px; margin-top: 20px;">
+        <div>
+            <h3>Original</h3>
+            <canvas id="previewCanvas"></canvas>
+        </div>
+        <div>
+            <h3>Vetorizado</h3>
+            <div id="svgOutput"></div>
+        </div>
+    </div>
+
+    <script>
+        let imageData = null;
+
+        // Carregar imagem
+        document.getElementById('imageInput').addEventListener('change', function(e) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.getElementById('previewCanvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                    imageData = ctx.getImageData(0, 0, img.width, img.height);
+                };
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        });
+
+        // Processar imagem
+        function processImage() {
+            if (!imageData) return;
+
+            // ✨ Novo código para detecção de cores
+    const colorCount = parseInt(document.getElementById('numColors').value);
+    const pixels = [];
+
+     // Extrair pixels da imagem
+     for(let i = 0; i < imageData.data.length; i += 4) {
+        pixels.push([
+            imageData.data[i],     // R
+            imageData.data[i+1],   // G
+            imageData.data[i+2]    // B
+        ]);
+    }
+
+    // Quantizar cores
+    const colorMap = quantize(pixels, colorCount);
+    const palette = colorMap.palette();
+
+    // Processar para cada cor
+    let finalSVG = `<svg width="${imageData.width}" height="${imageData.height}">`;
+
+        palette.forEach((color, index) => {
+        // Criar máscara de cor
+        const maskCanvas = document.createElement('canvas');
+        // ... (código completo abaixo)
+    });
+
+    finalSVG += '</svg>';
+    document.getElementById('svgOutput').innerHTML = finalSVG;
+}
+
+            const threshold = document.getElementById('threshold').value;
+            const canvas = document.createElement('canvas');
+            canvas.width = imageData.width;
+            canvas.height = imageData.height;
+            
+            const ctx = canvas.getContext('2d');
+            ctx.putImageData(imageData, 0, 0);
+
+            // Converter para bitmap
+            const image = new Image();
+            image.src = canvas.toDataURL();
+            
+            image.onload = () => {
+                const potrace = new Potrace();
+                potrace.setThreshold(threshold);
+                potrace.loadImageFromUrl(image.src);
+                
+                potrace.process(() => {
+                    // Gerar SVG
+                    const svg = potrace.getSVG();
+                    document.getElementById('svgOutput').innerHTML = svg;
+                });
+            };
+        
+    </script>
+
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+            max-width: 500px;
+        }
+        #svgOutput svg {
+            border: 1px solid #ccc;
+            max-width: 500px;
+        }
+        input[type="range"] {
+            width: 200px;
+        }
+    </style>
+</body>
+</html>
