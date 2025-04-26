@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="Vector4.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Vectorizer</title>
+<style>
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Image Vectorizer</h1>
+<div class="controls">
+<input type="file" id="upload" accept="image/*">
+<button onclick="vectorize()">Vectorizar</button>
+<select id="colors">
+<option value="2">2 Cores</option>
+<option value="4">4 Cores</option>
+<option value="8">8 Cores</option>
+</select>
+<button onclick="downloadImage()">Baixar Vetorizado</button>
+</div>
+<div class="sliders">
+<div>
+<label>Threshold:</label>
+<input type="range" id="threshold" min="0" max="255" value="128">
+</div>
+<div>
+<label>Suavização:</label>
+<input type="range" id="smoothing" min="0" max="10" value="5">
+</div>
+<div>
+<label>Tamanho Mínimo:</label>
+<input type="range" id="minsize" min="1" max="100" value="10">
+</div>
+</div>
+<div class="images">
+<div>
+<h2>Original</h2>
+<img id="original" src="#">
+</div>
+<div>
+<h2>Vetorizado</h2>
+<canvas id="vectorized"></canvas>
+</div>
+</div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

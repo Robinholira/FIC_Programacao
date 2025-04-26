@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Conversor de Imagens para Vetores</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+background: #f9f9f9;
+margin: 0;
+padding: 0;
+}
+header {
+background-color: #0056d2;
+color: white;
+padding: 20px;
+}
+.container {
+margin-top: 50px;
+}
+.upload-area {
+border: 2px dashed #aaa;
+padding: 50px;
+margin: 20px auto;
+width: 80%;
+max-width: 600px;
+background: white;
+cursor: pointer;
+}
+.upload-area:hover {
+background-color: #f0f0f0;
+}
+#fileInput {
+display: none;
+}
+button {
+margin-top: 20px;
+padding: 10px 20px;
+background-color: #0056d2;
+color: white;
+border: none;
+cursor: pointer;
+font-size: 16px;
+}
+button:hover {
+background-color: #0041a3;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Rastreie pixels para vetores em full color</h1>
+<p>Converta suas imagens PNG e JPG para vetores SVG com facilidade e rapidez.</p>
+</header>
+
+<div class="container">
+<div class="upload-area" id="uploadArea">
+<p>Arraste a imagem aqui ou clique para escolher</p>
+<input type="file" id="fileInput" accept="image/png, image/jpeg">
+</div>
+<button onclick="convertImage()">Escolher imagem para vetorizar</button>
+</div>
+
+<script>
+const uploadArea = document.getElementById('uploadArea');
+const fileInput = document.getElementById('fileInput');
+
+uploadArea.addEventListener('click', () => {
+fileInput.click();
+});
+
+uploadArea.addEventListener('dragover', (event) => {
+event.preventDefault();
+uploadArea.style.backgroundColor = '#e0e0e0';
+});
+
+uploadArea.addEventListener('dragleave', () => {
+uploadArea.style.backgroundColor = 'white';
+});
+
+uploadArea.addEventListener('drop', (event) => {
+event.preventDefault();
+uploadArea.style.backgroundColor = 'white';
+const file = event.dataTransfer.files[0];
+handleFile(file);
+});
+
+function convertImage() {
+fileInput.click();
+}
+
+fileInput.addEventListener('change', () => {
+const file = fileInput.files[0];
+handleFile(file);
+});
+
+function handleFile(file) {
+if (file && (file.type === "image/png" || file.type === "image/jpeg")) {
+alert(`Imagem "${file.name}" carregada. (Aqui começaria a vetorização)`);
+// Aqui você pode chamar uma API de vetorizar ou tratar o arquivo
+} else {
+alert("Por favor, selecione uma imagem PNG ou JPG.");
+}
+}
+</script>
+
+</body>
+</html>
