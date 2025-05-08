@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Título</title>
+</head>
+<body>
+    <h1>Título da Postagem</h1>
+    <button id="botaoAlterarTitulo">Alterar Título</button>
+
+    <script>
+       
+        const tituloPostagem = document.querySelector('h1');
+
+       
+        const botaoAlterar = document.getElementById('botaoAlterarTitulo');
+
+        
+        botaoAlterar.addEventListener('click', function() {
+            
+            tituloPostagem.textContent = 'Título da Postagem';
+        });
+    </script>
+</body>
+</html>
