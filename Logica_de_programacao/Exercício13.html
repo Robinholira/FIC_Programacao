@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Digite seu nome</h2>
+    <input type="text" id="campoNome" >
+    <p id="dica"></p>
+    <p id="digitando"></p>
+    
+    <script>
+
+     let campoTempoReal = document.getElementById ('campoNome')
+     let dicaTempoReal = document.getElementById('dica')
+     let digitandoTempoReal = document.getElementById('digitando')
+
+     campoTempoReal.addEventListener('focus',function(){
+       dicaTempoReal.textContent = "Use seu nome"
+     })
+
+     campoTempoReal.addEventListener('input', function(){
+        digitandoTempoReal.textContent = "você está digitando:" + campoTempoReal.value
+     })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="MeuBotao"> clique aquí</button>
+    <div id="ClickRealizado"></div>
+
+    <Script>
+        let botao= document.getElementById('MeuBotao');
+        let mensagem= document.getElementById('ClickRealizado');
+
+        botao.addEventListener('click' , function(){
+           mensagem.textContent= 'CliqueRealizado';
+           
+        
+        })
+        
+        botao.addEventListener('dblclick' , function(){
+           mensagem.textContent= 'clique Duplo realizado';
+           corpo.style.backgroundColor= 'Black';
+        
+        })
+
+        botao.addEventListener('click' , function(){
+           mensagem.textContent= 'cliqueRealizado';
+           corpo.style.backgroundColor= 'yelow';
+        
+           
+        
+        })
+        
+        botao.addEventListener('dblclick' , function(){
+           mensagem.textContent= 'clique Duplo realizado';
+           corpo.style.backgroundColor= 'Black';
+        
+        })
+        
+        
+            
+            
+        </Script>   
+    
+</body>
+</html>
