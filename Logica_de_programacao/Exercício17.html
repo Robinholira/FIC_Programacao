@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contador:<span id="contador"></span></h1>
+
+    <script>
+        let contador = 10
+        let intervalo = setInterval(()=>{
+            document.getElementById('contador').textContent=contador
+            contador--;
+            if (contador < 0){
+             clearInterval(intervalo)
+        }    
+            },1000);
+           
+        
+
+
+    </script>
+    
+</body>
+</html>
