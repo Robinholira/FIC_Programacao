@@ -1,0 +1,33 @@
+    .semaforo{
+    width: 60px;
+    height: 180px;
+    background-color: rgb(49, 42, 42);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.luz{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(210, 205, 205);
+    margin: auto;
+}
+
+.vermelha{
+    background-color: red;
+}
+
+.amarela{
+    background-color: yellow;
+}
+
+.verde{
+    background-color: green;
+}
+
+button{
+    margin-top: 20px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tempo para largar</h1>
+    <input type="number" id="tempo" placeholder="Digite os segundos">
+    <button id="iniciar"> Go!!</button>
+    <h3>Tempo restante:<span id="contador">0</span></h3>
+    
+    <script>
+        document.getElementById('iniciar').addEventListener('click', function(){
+        let tempo = document.getElementById('tempo').value
+        let contador = tempo
+
+        let intervalo = setInterval(() =>{
+            document.getElementById('contador').textContent = contador
+            contador -- 
+            if(contador< 0){
+                clearInterval(intervalo)
+                alert("largamos!")
+            }
+        },1000)
+        })
+    </script>
+</body>
+</html>
