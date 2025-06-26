@@ -1,0 +1,692 @@
+
+Loja virtual
+Diego Araujo Simões de Melo
+•
+19:37 (editado: 19:51)
+Site demonstração para loja virtual!
+
+index.html
+HTML
+Comentários da turma
+
+Adicionar comentário para a turma...
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Premium Electronics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .product-original-price {
+            text-decoration: line-through;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--secondary-color);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: var(--accent-color);
+            border: none;
+            border-radius: 20px;
+        }
+
+        .category-filter {
+            margin-bottom: 2rem;
+        }
+
+        .category-btn {
+            margin: 0 5px 10px 0;
+            border-radius: 20px;
+            padding: 8px 20px;
+        }
+
+        .category-btn.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .quantity-btn:hover {
+            background: #f8f9fa;
+        }
+
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .rating {
+            color: #ffc107;
+        }
+
+        .badge-sale {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .product-card-body {
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-laptop"></i> TechStore
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-light me-3" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-outline-light position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1>Premium Electronics Store</h1>
+            <p>Discover the latest technology with unbeatable prices and quality</p>
+            <a href="#products" class="btn btn-light btn-lg">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Products</h2>
+            
+            <!-- Category Filter -->
+            <div class="category-filter text-center">
+                <button class="btn btn-outline-secondary category-btn active" data-category="all">All Products</button>
+                <button class="btn btn-outline-secondary category-btn" data-category="laptops">Laptops</button>
+                <button class="btn btn-outline-secondary category-btn" data-category="phones">Smartphones</button>
+                <button class="btn btn-outline-secondary category-btn" data-category="accessories">Accessories</button>
+                <button class="btn btn-outline-secondary category-btn" data-category="gaming">Gaming</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="row" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2>About TechStore</h2>
+                    <p class="lead">Your trusted partner for premium electronics and technology solutions.</p>
+                    <p>We've been serving customers for over 10 years, providing the latest technology products with exceptional customer service. Our commitment to quality and innovation makes us the preferred choice for tech enthusiasts.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i> Premium Quality Products</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Fast & Free Shipping</li>
+                        <li><i class="fas fa-check text-success me-2"></i> 24/7 Customer Support</li>
+                        <li><i class="fas fa-check text-success me-2"></i> 30-Day Return Policy</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/placeholder.svg?height=400&width=600" alt="About Us" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>TechStore</h5>
+                    <p>Your premier destination for cutting-edge technology and electronics.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white-50">Home</a></li>
+                        <li><a href="#products" class="text-white-50">Products</a></li>
+                        <li><a href="#about" class="text-white-50">About</a></li>
+                        <li><a href="#contact" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h6>Customer Service</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Help Center</a></li>
+                        <li><a href="#" class="text-white-50">Returns</a></li>
+                        <li><a href="#" class="text-white-50">Shipping Info</a></li>
+                        <li><a href="#" class="text-white-50">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h6>Contact Info</h6>
+                    <p class="text-white-50 mb-1"><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</p>
+                    <p class="text-white-50 mb-1"><i class="fas fa-envelope me-2"></i> info@techstore.com</p>
+                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i> 123 Tech Street, Digital City</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="text-white-50 mb-0">&copy; 2024 TechStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <p class="text-center text-muted">Your cart is empty</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="w-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5>Total: $<span id="cartTotal">0.00</span></h5>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                        <button type="button" class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Sample product data
+        const products = [
+            {
+                id: 1,
+                name: "MacBook Pro 16\"",
+                price: 2499.99,
+                originalPrice: 2799.99,
+                category: "laptops",
+                image: "/placeholder.svg?height=250&width=300",
+                rating: 5,
+                sale: true
+            },
+            {
+                id: 2,
+                name: "iPhone 15 Pro",
+                price: 999.99,
+                originalPrice: null,
+                category: "phones",
+                image: "/placeholder.svg?height=250&width=300",
+                rating: 5,
+                sale: false
+            },
+            {
+                id: 3,
+                name: "AirPods Pro",
+                price: 249.99,
+                originalPrice: 279.99,
+                category: "accessories",
+                image: "/placeholder.svg?height=250&width=300",
+                rating: 4,
+                sale: true
+            },
+            {
+                id: 4,
+                name: "Gaming Laptop RTX 4080",
+                price: 1899.99,
+                originalPrice: null,
+                category: "gaming",
+                image: "/placeholder.svg?height=250&width=300",
+                rating: 5,
+                sale: false
+            },
+            {
+                id: 5,
+                name: "Dell XPS 13",
+                price: 1299.99,
+                originalPrice: 1499.99,
+                category: "laptops",
+                image: "/placeholder.svg?height=250&width=300",
+                rating: 4,
+                sale: true
+            },
+            {
+                id: 6,
+                name: "Samsung Galaxy S24",
+                price: 899.99,
+                originalPrice: null,
+                category: "phones",
+                image: "/placeholder.svg?height=250&width=300",
+                rating: 4,
+                sale: false
+            },
+            {
+                id: 7,
+                name: "Wireless Mouse",
+                price: 79.99,
+                originalPrice: 99.99,
+                category: "accessories",
+                image: "/placeholder.svg?height=250&width=300",
+                rating: 4,
+                sale: true
+            },
+            {
+                id: 8,
+                name: "Gaming Headset",
+                price: 199.99,
+                originalPrice: null,
+                category: "gaming",
+                image: "/placeholder.svg?height=250&width=300",
+                rating: 5,
+                sale: false
+            }
+        ];
+
+        let cart = [];
+        let currentCategory = 'all';
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            displayProducts(products);
+            setupEventListeners();
+            updateCartUI();
+        });
+
+        // Display products
+        function displayProducts(productsToShow) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+
+            productsToShow.forEach(product => {
+                const productCard = createProductCard(product);
+                grid.appendChild(productCard);
+            });
+        }
+
+        // Create product card
+        function createProductCard(product) {
+            const col = document.createElement('div');
+            col.className = 'col-lg-3 col-md-4 col-sm-6 mb-4';
+
+            const stars = '★'.repeat(product.rating) + '☆'.repeat(5 - product.rating);
+            const originalPriceHTML = product.originalPrice ? 
+                `<span class="product-original-price">$${product.originalPrice}</span>` : '';
+            const saleHTML = product.sale ? '<span class="badge-sale">SALE</span>' : '';
+
+            col.innerHTML = `
+                <div class="card product-card">
+                    <div class="position-relative">
+                        <img src="${product.image}" class="card-img-top product-image" alt="${product.name}">
+                        ${saleHTML}
+                    </div>
+                    <div class="card-body product-card-body">
+                        <h5 class="card-title">${product.name}</h5>
+                        <div class="rating mb-2">${stars}</div>
+                        <div class="price-section mb-3">
+                            <span class="product-price">$${product.price}</span>
+                            ${originalPriceHTML}
+                        </div>
+                        <button class="btn btn-primary w-100" onclick="addToCart(${product.id})">
+                            <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            return col;
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Category filter buttons
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active button
+                    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter products
+                    const category = this.dataset.category;
+                    currentCategory = category;
+                    const filteredProducts = category === 'all' ? 
+                        products : products.filter(p => p.category === category);
+                    displayProducts(filteredProducts);
+                });
+            });
+
+            // Checkout button
+            document.getElementById('checkoutBtn').addEventListener('click', function() {
+                if (cart.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+                alert('Thank you for your purchase! This is a demo checkout.');
+                cart = [];
+                updateCartUI();
+                bootstrap.Modal.getInstance(document.getElementById('cartModal')).hide();
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Add to cart function
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+
+            updateCartUI();
+            
+            // Show success message
+            showToast('Product added to cart!');
+        }
+
+        // Remove from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        // Update quantity
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+
+        // Update cart UI
+        function updateCartUI() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+
+            // Update cart count
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            // Update cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-center text-muted">Your cart is empty</p>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="row align-items-center">
+                            <div class="col-2">
+                                <img src="${item.image}" alt="${item.name}" class="img-fluid">
+                            </div>
+                            <div class="col-4">
+                                <h6 class="mb-0">${item.name}</h6>
+                                <small class="text-muted">$${item.price}</small>
+                            </div>
+                            <div class="col-3">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                                    <span>${item.quantity}</span>
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <strong>$${(item.price * item.quantity).toFixed(2)}</strong>
+                            </div>
+                            <div class="col-1">
+                                <button class="btn btn-sm btn-danger" onclick="removeFromCart(${item.id})">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Update total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            // Create toast element
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: #28a745;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 5px;
+                z-index: 9999;
+                animation: slideIn 0.3s ease;
+            `;
+            toast.textContent = message;
+
+            // Add animation styles
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+
+            document.body.appendChild(toast);
+
+            // Remove toast after 3 seconds
+            setTimeout(() => {
+                toast.remove();
+                style.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

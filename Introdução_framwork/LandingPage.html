@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMaster Pro - Aprenda Programação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .pricing-card {
+            transition: transform 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(0,0,0,0.9);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-code me-2"></i>CodeMaster Pro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recursos">Recursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#precos">Preços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#depoimentos">Depoimentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-warning ms-2" href="#precos">Começar Agora</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section d-flex align-items-center text-white position-relative">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4">
+                        Domine a <span class="text-warning">Programação</span> em 6 Meses
+                    </h1>
+                    <p class="lead mb-4">
+                        Aprenda as linguagens mais demandadas do mercado com projetos práticos, 
+                        mentoria personalizada e certificação reconhecida.
+                    </p>
+                    <div class="row mb-4">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-check-circle text-warning me-2"></i>
+                                <span>+50 projetos práticos</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-check-circle text-warning me-2"></i>
+                                <span>Mentoria 1:1</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-check-circle text-warning me-2"></i>
+                                <span>Certificação</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#precos" class="btn btn-warning btn-lg">
+                            <i class="fas fa-rocket me-2"></i>Começar Agora
+                        </a>
+                        <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <i class="fas fa-play me-2"></i>Ver Demonstração
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="" class="img-fluid" alt="Programação">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator text-white">
+            <i class="fas fa-chevron-down fa-2x"></i>
+        </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <h2 class="display-4 fw-bold text-warning">10k+</h2>
+                    <p class="lead">Estudantes Formados</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h2 class="display-4 fw-bold text-warning">95%</h2>
+                    <p class="lead">Taxa de Empregabilidade</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h2 class="display-4 fw-bold text-warning">4.9</h2>
+                    <p class="lead">Avaliação dos Alunos</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h2 class="display-4 fw-bold text-warning">24/7</h2>
+                    <p class="lead">Suporte Disponível</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos -->
+    <section id="recursos" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Por que escolher o CodeMaster Pro?</h2>
+                <p class="lead text-muted">Metodologia comprovada para acelerar seu aprendizado</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop-code fa-2x text-white"></i>
+                        </div>
+                        <h4>Projetos Práticos</h4>
+                        <p class="text-muted">Aprenda construindo aplicações reais que você pode adicionar ao seu portfólio profissional.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-users fa-2x text-white"></i>
+                        </div>
+                        <h4>Mentoria Personalizada</h4>
+                        <p class="text-muted">Sessões 1:1 com desenvolvedores seniores para acelerar seu progresso e esclarecer dúvidas.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate fa-2x text-white"></i>
+                        </div>
+                        <h4>Certificação Reconhecida</h4>
+                        <p class="text-muted">Certificados validados pela indústria que realmente fazem diferença no seu currículo.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock fa-2x text-white"></i>
+                        </div>
+                        <h4>Flexibilidade Total</h4>
+                        <p class="text-muted">Estude no seu ritmo, quando e onde quiser. Acesso vitalício ao conteúdo.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-briefcase fa-2x text-white"></i>
+                        </div>
+                        <h4>Preparação para o Mercado</h4>
+                        <p class="text-muted">Simulações de entrevistas e preparação específica para conseguir sua primeira vaga.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart fa-2x text-white"></i>
+                        </div>
+                        <h4>Comunidade Ativa</h4>
+                        <p class="text-muted">Faça parte de uma comunidade de milhares de desenvolvedores em crescimento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preços -->
+    <section id="precos" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Escolha seu Plano</h2>
+                <p class="lead text-muted">Investimento que transforma sua carreira</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card pricing-card h-100 border-0 shadow">
+                        <div class="card-body text-center p-4">
+                            <h4 class="card-title">Básico</h4>
+                            <div class="mb-3">
+                                <span class="h2 fw-bold">R$ 297</span>
+                                <span class="text-muted">/mês</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Acesso a todos os cursos</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Projetos práticos</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Certificados</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte por email</li>
+                                <li class="mb-2"><i class="fas fa-times text-muted me-2"></i>Mentoria 1:1</li>
+                                <li class="mb-2"><i class="fas fa-times text-muted me-2"></i>Preparação para entrevistas</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Escolher Plano</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card pricing-card h-100 border-warning shadow-lg">
+                        <div class="card-header bg-warning text-center">
+                            <span class="badge bg-dark">Mais Popular</span>
+                        </div>
+                        <div class="card-body text-center p-4">
+                            <h4 class="card-title">Pro</h4>
+                            <div class="mb-3">
+                                <span class="h2 fw-bold">R$ 497</span>
+                                <span class="text-muted">/mês</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Tudo do plano Básico</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Mentoria 1:1 semanal</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Revisão de código</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Preparação para entrevistas</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Acesso prioritário</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Comunidade VIP</li>
+                            </ul>
+                            <button class="btn btn-warning w-100">Escolher Plano</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card pricing-card h-100 border-0 shadow">
+                        <div class="card-body text-center p-4">
+                            <h4 class="card-title">Enterprise</h4>
+                            <div class="mb-3">
+                                <span class="h2 fw-bold">R$ 797</span>
+                                <span class="text-muted">/mês</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Tudo do plano Pro</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Mentoria diária</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Projetos personalizados</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Garantia de emprego</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Networking exclusivo</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte 24/7</li>
+                            </ul>
+                            <button class="btn btn-dark w-100">Escolher Plano</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="text-muted">
+                    <i class="fas fa-shield-alt me-2"></i>
+                    Garantia de 30 dias ou seu dinheiro de volta
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-white">O que nossos alunos dizem</h2>
+                <p class="lead text-white">Histórias reais de transformação profissional</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card testimonial-card text-white h-100">
+                        <div class="card-body">
+                            <div class="text-warning mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text">"Em 6 meses saí de zero conhecimento para desenvolvedor júnior em uma startup. O método realmente funciona!"</p>
+                            <div class="d-flex align-items-center">
+                                <img src="/placeholder.svg?height=50&width=50" class="rounded-circle me-3" alt="Aluno">
+                                <div>
+                                    <h6 class="mb-0">Carlos Silva</h6>
+                                    <small>Desenvolvedor Frontend</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card testimonial-card text-white h-100">
+                        <div class="card-body">
+                            <div class="text-warning mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text">"A mentoria personalizada fez toda a diferença. Consegui meu primeiro emprego como dev em apenas 4 meses!"</p>
+                            <div class="d-flex align-items-center">
+                                <img src="/placeholder.svg?height=50&width=50" class="rounded-circle me-3" alt="Aluna">
+                                <div>
+                                    <h6 class="mb-0">Ana Costa</h6>
+                                    <small>Desenvolvedora Full Stack</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card testimonial-card text-white h-100">
+                        <div class="card-body">
+                            <div class="text-warning mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text">"Mudei de carreira aos 35 anos. Hoje trabalho remotamente ganhando 3x mais que antes. Melhor investimento da minha vida!"</p>
+                            <div class="d-flex align-items-center">
+                                <img src="/placeholder.svg?height=50&width=50" class="rounded-circle me-3" alt="Aluno">
+                                <div>
+                                    <h6 class="mb-0">Roberto Lima</h6>
+                                    <small>Desenvolvedor Backend</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Perguntas Frequentes</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Preciso ter conhecimento prévio em programação?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Não! Nosso curso é projetado para iniciantes completos. Começamos do zero e te levamos até o nível profissional.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Quanto tempo preciso dedicar por dia?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Recomendamos 2-3 horas por dia, mas você pode estudar no seu próprio ritmo. O importante é a consistência.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Há garantia de emprego?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    No plano Enterprise oferecemos garantia de emprego. Nos outros planos, temos 95% de taxa de empregabilidade.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-5 bg-dark text-white text-center">
+        <div class="container">
+            <h2 class="display-4 fw-bold mb-4">Pronto para transformar sua carreira?</h2>
+            <p class="lead mb-4">Junte-se a mais de 10.000 desenvolvedores que mudaram de vida com o CodeMaster Pro</p>
+            <a href="#precos" class="btn btn-warning btn-lg">
+                <i class="fas fa-rocket me-2"></i>Começar Agora - 50% OFF
+            </a>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Entre em Contato</h2>
+                <p class="lead text-muted">Ainda tem dúvidas? Fale conosco!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow">
+                        <div class="card-body p-5">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="nomeContato" placeholder="Nome">
+                                            <label for="nomeContato">Nome</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="emailContato" placeholder="Email">
+                                            <label for="emailContato">Email</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="assunto">
+                                            <option value="">Selecione o assunto</option>
+                                            <option value="duvidas">Dúvidas sobre o curso</option>
+                                            <option value="precos">Informações sobre preços</option>
+                                            <option value="suporte">Suporte técnico</option>
+                                            <option value="parceria">Parcerias</option>
+                                        </select>
+                                        <label for="assunto">Assunto</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="mensagem" style="height: 120px" placeholder="Mensagem"></textarea>
+                                        <label for="mensagem">Mensagem</label>
+                                    </div>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-paper-plane me-2"></i>Enviar Mensagem
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-code me-2"></i>CodeMaster Pro</h5>
+                    <p>Transformando vidas através da programação</p>
+                    <div>
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2024 CodeMaster Pro. Todos os direitos reservados.</p>
+                    <p>
+                        <a href="#" class="text-white text-decoration-none">Termos de Uso</a> | 
+                        <a href="#" class="text-white text-decoration-none">Política de Privacidade</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Vídeo -->
+    <div class="modal fade" id="videoModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Demonstração do Curso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(0,0,0,0.95)';
+            } else {
+                navbar.style.background = 'rgba(0,0,0,0.9)';
+            }
+        });
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.display-4');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = counter.textContent.replace(/\d+/, target);
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = counter.textContent.replace(/\d+/, Math.floor(current));
+                    }
+                }, 20);
+            });
+        }
+
+        // Trigger counter animation when section is visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.bg-dark');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script> -->
+</body>
+</html>
+landing-page-produto.html
+Exibindo landing-page-produto.html…
+landing-page
+Diego Araujo Simões de Melo
+•
+19:31
+Um modelo de landing-page para você customizar!
+
+landing-page-produto.html
+HTML
+Comentários da turma
+
+Adicionar comentário para a turma...

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Silva - Fotógrafa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-camera me-2"></i>Ana Silva</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfólio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section com Carousel -->
+    <section id="inicio" style="margin-top: 56px;">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="bg-primary d-flex align-items-center justify-content-center" style="height: 70vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/placeholder.svg?height=600&width=1200'); background-size: cover; background-position: center;">
+                        <div class="text-center text-white">
+                            <h1 class="display-3 fw-bold">Ana Silva</h1>
+                            <p class="lead">Fotógrafa Profissional</p>
+                            <p>Capturando momentos únicos há mais de 8 anos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="bg-secondary d-flex align-items-center justify-content-center" style="height: 70vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/placeholder.svg?height=600&width=1200'); background-size: cover; background-position: center;">
+                        <div class="text-center text-white">
+                            <h2 class="display-4">Casamentos</h2>
+                            <p class="lead">Eternizando o seu dia especial</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="bg-success d-flex align-items-center justify-content-center" style="height: 70vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/placeholder.svg?height=600&width=1200'); background-size: cover; background-position: center;">
+                        <div class="text-center text-white">
+                            <h2 class="display-4">Retratos</h2>
+                            <p class="lead">Revelando a sua essência</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="/placeholder.svg?height=400&width=500" class="img-fluid rounded shadow" alt="Ana Silva">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Sobre Mim</h2>
+                    <p class="lead">Olá! Sou Ana Silva, fotógrafa profissional apaixonada por capturar momentos únicos e especiais.</p>
+                    <p>Com mais de 8 anos de experiência, especializo-me em casamentos, retratos e eventos corporativos. Minha missão é contar histórias através das lentes, criando memórias que durarão para sempre.</p>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="text-center">
+                                <h3 class="text-primary">200+</h3>
+                                <p>Casamentos</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-center">
+                                <h3 class="text-primary">500+</h3>
+                                <p>Clientes Felizes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <span class="badge bg-secondary me-2">Canon</span>
+                        <span class="badge bg-secondary me-2">Nikon</span>
+                        <span class="badge bg-secondary me-2">Adobe Lightroom</span>
+                        <span class="badge bg-secondary me-2">Photoshop</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfólio -->
+    <section id="portfolio" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Meu Portfólio</h2>
+            
+            <!-- Filtros -->
+            <div class="text-center mb-4">
+                <button class="btn btn-outline-primary me-2 filter-btn active" data-filter="all">Todos</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="casamento">Casamentos</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="retrato">Retratos</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="evento">Eventos</button>
+            </div>
+
+            <!-- Grid de Fotos -->
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="casamento">
+                    <div class="card border-0 shadow-sm">
+                        <img src="/placeholder.svg?height=300&width=400" class="card-img-top" alt="Casamento 1" data-bs-toggle="modal" data-bs-target="#imageModal" style="cursor: pointer; height: 250px; object-fit: cover;">
+                        <div class="card-body p-2">
+                            <h6 class="card-title mb-1">Casamento Maria & João</h6>
+                            <small class="text-muted">Igreja São José - 2024</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="retrato">
+                    <div class="card border-0 shadow-sm">
+                        <img src="/placeholder.svg?height=300&width=400" class="card-img-top" alt="Retrato 1" data-bs-toggle="modal" data-bs-target="#imageModal" style="cursor: pointer; height: 250px; object-fit: cover;">
+                        <div class="card-body p-2">
+                            <h6 class="card-title mb-1">Ensaio Família Silva</h6>
+                            <small class="text-muted">Parque Ibirapuera - 2024</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="evento">
+                    <div class="card border-0 shadow-sm">
+                        <img src="/placeholder.svg?height=300&width=400" class="card-img-top" alt="Evento 1" data-bs-toggle="modal" data-bs-target="#imageModal" style="cursor: pointer; height: 250px; object-fit: cover;">
+                        <div class="card-body p-2">
+                            <h6 class="card-title mb-1">Evento Corporativo</h6>
+                            <small class="text-muted">Hotel Copacabana - 2024</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="casamento">
+                    <div class="card border-0 shadow-sm">
+                        <img src="/placeholder.svg?height=300&width=400" class="card-img-top" alt="Casamento 2" data-bs-toggle="modal" data-bs-target="#imageModal" style="cursor: pointer; height: 250px; object-fit: cover;">
+                        <div class="card-body p-2">
+                            <h6 class="card-title mb-1">Casamento Ana & Pedro</h6>
+                            <small class="text-muted">Fazenda Vista Alegre - 2024</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="retrato">
+                    <div class="card border-0 shadow-sm">
+                        <img src="/placeholder.svg?height=300&width=400" class="card-img-top" alt="Retrato 2" data-bs-toggle="modal" data-bs-target="#imageModal" style="cursor: pointer; height: 250px; object-fit: cover;">
+                        <div class="card-body p-2">
+                            <h6 class="card-title mb-1">Ensaio Gestante</h6>
+                            <small class="text-muted">Estúdio - 2024</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="evento">
+                    <div class="card border-0 shadow-sm">
+                        <img src="/placeholder.svg?height=300&width=400" class="card-img-top" alt="Evento 2" data-bs-toggle="modal" data-bs-target="#imageModal" style="cursor: pointer; height: 250px; object-fit: cover;">
+                        <div class="card-body p-2">
+                            <h6 class="card-title mb-1">Aniversário 15 Anos</h6>
+                            <small class="text-muted">Buffet Alegria - 2024</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para visualizar imagens -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Visualizar Foto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="/placeholder.svg?height=500&width=700" class="img-fluid" alt="Foto ampliada" id="modalImage">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Meus Serviços</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center border-0 shadow">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="fas fa-heart fa-3x text-danger"></i>
+                            </div>
+                            <h4 class="card-title">Casamentos</h4>
+                            <p class="card-text">Cobertura completa do seu dia especial, desde os preparativos até a festa.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Ensaio pré-wedding</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Cerimônia e festa</li>
+                                <li><i class="fas fa-check text-success me-2"></i>200+ fotos editadas</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Álbum digital</li>
+                            </ul>
+                            <h5 class="text-primary">A partir de R$ 2.500</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center border-0 shadow">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="fas fa-user fa-3x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">Retratos</h4>
+                            <p class="card-text">Ensaios individuais, familiares, gestantes e infantis em locais únicos.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>1h de sessão</li>
+                                <li><i class="fas fa-check text-success me-2"></i>50+ fotos editadas</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Galeria online</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Consultoria de styling</li>
+                            </ul>
+                            <h5 class="text-primary">A partir de R$ 400</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center border-0 shadow">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="fas fa-calendar fa-3x text-success"></i>
+                            </div>
+                            <h4 class="card-title">Eventos</h4>
+                            <p class="card-text">Cobertura de eventos corporativos, aniversários e celebrações especiais.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Cobertura completa</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Entrega em 7 dias</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Fotos em alta resolução</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Backup em nuvem</li>
+                            </ul>
+                            <h5 class="text-primary">A partir de R$ 800</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">O que dizem meus clientes</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text">"Ana é simplesmente incrível! Capturou cada momento especial do nosso casamento com perfeição."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="/placeholder.svg?height=50&width=50" class="rounded-circle me-3" alt="Cliente">
+                                <div>
+                                    <h6 class="mb-0">Maria Santos</h6>
+                                    <small class="text-muted">Noiva 2024</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text">"Profissional excepcional! As fotos do ensaio da nossa família ficaram lindas."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="/placeholder.svg?height=50&width=50" class="rounded-circle me-3" alt="Cliente">
+                                <div>
+                                    <h6 class="mb-0">Carlos Silva</h6>
+                                    <small class="text-muted">Ensaio Família</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text">"Recomendo de olhos fechados! Ana tem um olhar único e muito talento."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="/placeholder.svg?height=50&width=50" class="rounded-circle me-3" alt="Cliente">
+                                <div>
+                                    <h6 class="mb-0">Ana Costa</h6>
+                                    <small class="text-muted">Evento Corporativo</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Entre em Contato</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="nome" class="form-label">Nome</label>
+                                        <input type="text" class="form-control" id="nome" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="telefone" class="form-label">Telefone</label>
+                                        <input type="tel" class="form-control" id="telefone">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="servico" class="form-label">Tipo de Serviço</label>
+                                        <select class="form-select" id="servico">
+                                            <option value="">Selecione...</option>
+                                            <option value="casamento">Casamento</option>
+                                            <option value="retrato">Retrato</option>
+                                            <option value="evento">Evento</option>
+                                            <option value="outro">Outro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="data" class="form-label">Data do Evento</label>
+                                    <input type="date" class="form-control" id="data">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="mensagem" class="form-label">Mensagem</label>
+                                    <textarea class="form-control" id="mensagem" rows="4" placeholder="Conte-me mais sobre o seu projeto..."></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-paper-plane me-2"></i>Enviar Mensagem
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                    <h5>Email</h5>
+                    <p>ana@fotografa.com</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                    <h5>Telefone</h5>
+                    <p>(11) 99999-8888</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                    <h5>Localização</h5>
+                    <p>São Paulo, SP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Ana Silva Fotografia. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-whatsapp fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Filtro do portfólio
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active de todos os botões
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Adiciona active ao botão clicado
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const items = document.querySelectorAll('.portfolio-item');
+                
+                items.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal de imagem
+        document.querySelectorAll('[data-bs-toggle="modal"]').forEach(img => {
+            img.addEventListener('click', function() {
+                const modalImg = document.getElementById('modalImage');
+                modalImg.src = this.src;
+            });
+        });
+    </script>
+</body>
+</html>
+portfolio-fotografo.html
+Exibindo portfolio-fotografo.html…
+Site para apresentação
+Diego Araujo Simões de Melo
+•
+19:33
+Site para um fotografo usar de modelo
+
+portfolio-fotografo.html
+HTML
+Comentários da turma
+
+Adicionar comentário para a turma...
